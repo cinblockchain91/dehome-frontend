@@ -1,11 +1,13 @@
 module.exports = {
-  extends: ['@commitlint/config-conventional'],
+  parserPreset: {
+    parserOpts: {
+      headerPattern: /^\[(?<repo>[a-z-]+)\]-(?<issue>\d+): (?<subject>.*)$/,
+      headerCorrespondence: ['repo', 'issue', 'subject'],
+    },
+  },
   rules: {
-    'header-pattern': [2, 'always', /^\[dehome-ui\]-\d+: .+$/],
-    'header-message': [
-      2,
-      'always',
-      'Commit message phải theo format: [dehome-ui]-<issue_number>: <description>',
-    ],
+    'subject-empty': [2, 'never'],
+    'subject-case': [2, 'always', 'sentence-case'],
+    'header-max-length': [2, 'always', 100],
   },
 };
