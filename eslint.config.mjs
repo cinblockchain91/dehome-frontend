@@ -9,7 +9,14 @@ import prettierConfig from 'eslint-config-prettier';
 export default [
   // 🧹 Bỏ qua các thư mục không cần lint
   {
-    ignores: ['.next/', 'node_modules/', 'dist/', 'next-env.d.ts'],
+    ignores: [
+      '.next/',
+      'node_modules/',
+      'dist/',
+      'next-env.d.ts',
+      'commitlint.config.js',
+      'stylelint.config.js',
+    ],
   },
 
   // ⚙️ Cấu hình chính cho dự án
