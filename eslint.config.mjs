@@ -1,3 +1,6 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from 'eslint-plugin-storybook';
+
 import js from '@eslint/js';
 import nextPlugin from '@next/eslint-plugin-next';
 import tseslint from '@typescript-eslint/eslint-plugin';
@@ -16,10 +19,9 @@ export default [
       'next-env.d.ts',
       'commitlint.config.js',
       'stylelint.config.js',
+      '.storybook/',
     ],
-  },
-
-  // ⚙️ Cấu hình chính cho dự án
+  }, // ⚙️ Cấu hình chính cho dự án
   {
     files: ['**/*.{ts,tsx,js,jsx}'],
 
@@ -71,4 +73,5 @@ export default [
       ],
     },
   },
+  ...storybook.configs['flat/recommended'],
 ];
