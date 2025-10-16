@@ -48,7 +48,6 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           working-directory: ./
           scope: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-args: '--prod'
       - name: 🚀Comment production URL
         if: success()
         uses: marocchino/sticky-pull-request-comment@v2
